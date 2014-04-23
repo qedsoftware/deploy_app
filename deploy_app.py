@@ -37,4 +37,7 @@ put(git_archive, web_dir)
 run("cd {0}; unzip {1}".format(web_dir,git_archive))
 sudo("cd {web_dir}; chown -R www-data:www-data {web_dir}".format(web_dir=web_dir))
 
+# cleanup
+os.system("rm {0}".format(git_archive))
+
 
